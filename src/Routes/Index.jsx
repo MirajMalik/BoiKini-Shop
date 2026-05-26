@@ -10,6 +10,7 @@ const router = createBrowserRouter([
     children: [
         {
             index: true,
+            loader: () => fetch("booksData.json") ,                    // when / route hits loader loads the data in Home component
             path: "/",
             Component: Home,
         },
