@@ -2,7 +2,7 @@ import bookImage from '../../assets/books.jpg'
 
 const Banner = () => {
     return (
-    <div className="hero bg-base-200">
+    <div className="hero bg-base-100 mt-3 shadow-lg">
         <div className="hero-content flex-col lg:flex-row-reverse">
             <img
                 src={bookImage}
@@ -15,7 +15,7 @@ const Banner = () => {
                     Whether you're looking for fiction, drama, dystopian tales, or hidden gems, 
                     BoiKini has something special waiting for you. Start your literary journey today!
                 </p>
-                <button className="btn btn-primary">Explore Books</button>
+                <button className="btn btn-primary bg-gray-900 hover:bg-gray-700">Buy Books</button>
             </div>
         </div>
     </div>

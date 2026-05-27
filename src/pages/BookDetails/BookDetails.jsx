@@ -1,8 +1,9 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
+import { addToStoredBooks } from "../../utilities/addToDB";
 
 const BookDetails = () => {
-    const { id } = useParams();
+    const { id } = useParams();                                         // id string
     const navigate = useNavigate();
     const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -11,7 +12,7 @@ const BookDetails = () => {
         fetch("/booksData.json")
             .then(res => res.json())
             .then(data => {
-                const foundBook = data.find(b => b.bookId === parseInt(id));
+                const foundBook = data.find(b => b.bookId === parseInt(id));     // for matching parseInt to convert into number
                 setBook(foundBook);
                 setLoading(false);
             })
@@ -20,6 +21,10 @@ const BookDetails = () => {
                 setLoading(false);
             });
     }, [id]);
+
+    const handleMarkAsRead = (id) => {
+        addToStoredBooks(id);
+    }
 
     if (loading) {
         return <div className="text-center py-20 text-xl">Loading...</div>;
@@ -40,7 +45,7 @@ const BookDetails = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-10 px-4">
+        <div className="min-h-screen bg-slate-100 py-10 px-4">
             <button 
                 onClick={() => navigate(-1)}
                 className="mb-6 px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 transition"
@@ -51,7 +56,7 @@ const BookDetails = () => {
             <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
 
-                    <div className="md:col-span-1 flex justify-center">
+                    <div className="md:col-span-1 flex justify-center items-center">
                         <div className="bg-gray-100 rounded-lg overflow-hidden shadow-md">
                             <img 
                                 src={book.image} 
@@ -113,6 +118,18 @@ const BookDetails = () => {
                             <p className="text-gray-700 leading-relaxed text-justify">
                                 {book.review}
                             </p>
+                        </div>
+
+                        <div className="flex gap-2 mt-4">
+                            <button 
+                                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-2 text-xs rounded-lg transition"
+                                onClick = {()=> handleMarkAsRead(id)}   
+                            >
+                                Mark as Read
+                            </button>
+                            <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-2 text-xs rounded-lg transition">
+                                Add to Wishlist
+                            </button>
                         </div>
                     </div>
                 </div>

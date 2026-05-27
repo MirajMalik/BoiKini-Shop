@@ -22,7 +22,7 @@ const Books = ({allBooks}) => {
 
     return (  
         <div>
-            <h1 className="text-3xl text-center p-6"> Books </h1>
+            <h1 className="text-3xl text-center p-6"> Book's </h1>
             <Suspense fallback={ <span>Loading ...</span> }>       
                 {/* <Book booksPromise={booksPromise} />               step-2 */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
