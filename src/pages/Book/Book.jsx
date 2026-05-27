@@ -1,5 +1,9 @@
+// import { Link } from "react-router";
+import { useNavigate } from "react-router";
+
 const Book = ({book}) => {
     const {
+        bookId,
         bookName,
         author,
         image,
@@ -11,6 +15,12 @@ const Book = ({book}) => {
         publisher,
         yearOfPublishing
     } = book;
+
+    const navigate = useNavigate();
+
+    const handleBookDetails = (id) => {
+        navigate(`/bookDetails/${id}`);
+    };
 
     return (
         <div className="flex justify-center items-center p-2">
@@ -73,7 +83,12 @@ const Book = ({book}) => {
                             <p className="text-gray-700 text-xs leading-relaxed line-clamp-3">
                                 {review}
                             </p>
-                            <button className="text-gray-400 text-md cursor-pointer">view more ...</button>
+                            <button 
+                                className="text-gray-400 text-md cursor-pointer"
+                                onClick={() => handleBookDetails(bookId)}
+                            >
+                                    view more ...
+                            </button>
                         </div>
 
                         <div className="flex gap-2 mt-4">

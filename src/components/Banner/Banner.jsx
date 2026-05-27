@@ -9,12 +9,13 @@ const Banner = () => {
                 className="max-w-sm rounded-lg shadow-2xl"
             />
             <div>
-                <h1 className="text-5xl font-bold">Box Office News!</h1>
+                <h1 className="text-5xl font-bold">Discover Your Next Great Read</h1>
                 <p className="py-6">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                    quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    Explore our curated collection of books from bestselling authors and timeless classics. 
+                    Whether you're looking for fiction, drama, dystopian tales, or hidden gems, 
+                    BoiKini has something special waiting for you. Start your literary journey today!
                 </p>
-                <button className="btn btn-primary">Get Started</button>
+                <button className="btn btn-primary">Explore Books</button>
             </div>
         </div>
     </div>

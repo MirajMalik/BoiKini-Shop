@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Book from "../Book/Book";
 
 const Books = ({allBooks}) => {
+    // console.log(allBooks);
     // const [allBooks, setAllBooks ] = useState([]);
 
     // data loading way => 1 (UseState + UseEffect)
