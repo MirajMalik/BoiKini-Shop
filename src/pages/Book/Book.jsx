@@ -73,9 +73,10 @@ const Book = ({book}) => {
                             <p className="text-gray-700 text-xs leading-relaxed line-clamp-3">
                                 {review}
                             </p>
+                            <button className="text-gray-400 text-md cursor-pointer">view more ...</button>
                         </div>
 
-                        <div className="flex gap-2 mt-2">
+                        <div className="flex gap-2 mt-4">
                             <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-2 text-xs rounded-lg transition">
                                 Add to Cart
                             </button>
