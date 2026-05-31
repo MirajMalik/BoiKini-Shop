@@ -21,4 +21,4 @@ const addToStoredBooks = (id) => {
     }
 };
 
-export {addToStoredBooks};
+export {addToStoredBooks, getStoredBooks};
