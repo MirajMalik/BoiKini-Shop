@@ -13,10 +13,18 @@ const MinimalBookCard = ({ book }) => {
                 />
             </div>
             <div className="p-4">
-                <h3 className="font-bold text-gray-800 mb-1 line-clamp-2 text-sm">
-                    {book.bookName}
-                </h3>
-                <p className="text-xs text-gray-600 mb-2">by {book.author}</p>
+                <div className="flex items-center justify-between mb-3">
+                    <div>
+                        <h3 className="font-bold text-gray-800 mb-1 line-clamp-2 text-sm">
+                            {book.bookName}
+                         </h3>
+                        <p className="text-xs text-gray-600 mb-2">by {book.author}</p>
+                    </div>
+                    <div className="font-bold text-gray-600 mb-1 line-clamp-2 text-xs">
+                         <p className="text-xs text-gray-600 mb-2">pages: {book.totalPages}</p> 
+                    </div>
+                </div>
+              
                 
                 <div className="flex items-center justify-between mb-3">
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-semibold">
