@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
-import { addToStoredBooks } from "../../utilities/addToDB";
+import { addToStoredBooks, addToStoredWishlist } from "../../utilities/addToDB";
 
 const BookDetails = () => {
     const { id } = useParams();                                         // id string
@@ -24,6 +24,9 @@ const BookDetails = () => {
 
     const handleMarkAsRead = (id) => {
         addToStoredBooks(id);
+    }
+    const handleMarkAsWishList = (id) => {
+        addToStoredWishlist(id);
     }
 
     if (loading) {
@@ -127,7 +130,10 @@ const BookDetails = () => {
                             >
                                 Mark as Read
                             </button>
-                            <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-2 text-xs rounded-lg transition">
+                            <button 
+                                className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-2 text-xs rounded-lg transition"
+                                onClick = {()=> handleMarkAsWishList(id)} 
+                            >
                                 Add to Wishlist
                             </button>
                         </div>

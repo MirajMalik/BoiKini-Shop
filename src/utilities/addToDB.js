@@ -21,4 +21,27 @@ const addToStoredBooks = (id) => {
     }
 };
 
-export {addToStoredBooks, getStoredBooks};
+const getStoredWishlist = () => {
+    const storedStrWishlist = localStorage.getItem("wishlist");
+    if(storedStrWishlist) {
+        const storedWishlistData = JSON.parse(storedStrWishlist);
+        return storedWishlistData;
+    }
+    else {
+        return [];
+    }
+};
+
+const addToStoredWishlist = (id) => {
+    const storedWishlistData = getStoredWishlist();
+    if(storedWishlistData.includes(id)) {
+        alert("Book Already Added to Wishlist!");
+    }
+    else {
+        storedWishlistData.push(id);
+        const data = JSON.stringify(storedWishlistData);
+        localStorage.setItem("wishlist", data);
+    }
+};
+
+export {addToStoredBooks, getStoredBooks, addToStoredWishlist, getStoredWishlist};

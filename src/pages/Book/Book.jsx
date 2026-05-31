@@ -84,7 +84,7 @@ const Book = ({book}) => {
                                 {review}
                             </p>
                             <button 
-                                className="text-gray-400 text-md cursor-pointer"
+                                className="text-slate-900 text-md cursor-pointer"
                                 onClick={() => handleBookDetails(bookId)}
                             >
                                     view more ...
